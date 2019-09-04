@@ -2,35 +2,6 @@
 
 ![Simple AJAX form](images/form.jpg)
 
-## HTML
-
-```html
-<!-- Container to display the form messages like success or try again. -->
-<div id="form-message"></div>
-
-<!-- Container to hold the form contents -->
-<div id="form">
-  <label for="username">Username</label>
-  <input id="username" name="username" type="text" spellcheck="false" />
-  <label for="password">Password</label>
-  <input id="password" name="password" type="password" spellcheck="false" />
-
-  <!-- Show password checkbox -->
-  <div id="show_password">
-    <input id="checkbox" type="checkbox" />
-    <p>show password</p>
-  </div>
-
-  <!-- I agree checkbox  -->
-  <div id="agree">
-    <input id="checkbox" type="checkbox" />
-    <p>I agree to all the <span id="terms">Terms and Conditions</span></p>
-  </div>
-</div>
-
-<!-- Button to submit the form -->
-<button id="btn-submit" disabled>Submit</button>
-```
 
 ## Javascript ([JQuery](https://jquery.com))
 
