@@ -62,7 +62,7 @@ div#form-message {
     margin-left: 50px;
     padding: 10px;
     line-height: 20px;
-    text-transform: uppercase;
+    /* text-transform: uppercase; */
     font-weight: normal;
     font-size: 15px;
     display: none;

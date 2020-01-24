@@ -38,7 +38,8 @@ $(document).ready(() => {
 
     //JQuery AJAX
     $.ajax({
-      url: "http://localhost:8000/submit_form",
+      //url: "http://localhost:8000/submit_form",
+      url: "form.php",
       headers: {
         "Content-Type": "application/json;charset=UTF-8"
       },
@@ -47,14 +48,15 @@ $(document).ready(() => {
     })
       //If the request is successfull
       .done(response => {
-        if (response.authorized) {
+        console.log(JSON.parse(response).authorized);
+        if (JSON.parse(response).authorized == true){
           form_message.css("display", "block");
           form_message.html("<p>Success</p>");
           form_message.addClass("success");
           form_message.removeClass("faliure");
         } else {
           form_message.css("display", "block");
-          form_message.html("<p>Try again!</p>");
+          form_message.html("<p>Username or password might be incorrect!</p>");
           form_message.removeClass("success");
           form_message.addClass("faliure");
         }
