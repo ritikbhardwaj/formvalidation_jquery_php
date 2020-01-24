@@ -48,17 +48,23 @@ $(document).ready(() => {
     })
       //If the request is successfull
       .done(response => {
-        console.log(JSON.parse(response).authorized);
+        console.log(JSON.parse(response));
         if (JSON.parse(response).authorized == true){
-          form_message.css("display", "block");
-          form_message.html("<p>Success</p>");
-          form_message.addClass("success");
-          form_message.removeClass("faliure");
+          $('h1').css("color","white");
+          $('h1').text("Successfully logged in!");
+          form_message.css("display", "none");
+          // form_message.html("<p>Success</p>");
+          // form_message.addClass("success").removeClass("faliure");
+          $('body').addClass("bg-suc").removeClass('bg-fal');
         } else {
+          $('h1').text("Faliure!");
+          $('h1').css("color", "white");
           form_message.css("display", "block");
           form_message.html("<p>Username or password might be incorrect!</p>");
-          form_message.removeClass("success");
-          form_message.addClass("faliure");
+          form_message.removeClass("success").addClass("faliure");
+          $('body').addClass("bg-fal");
+          //shake the div
+          form_message.effect("shake", { times: 2 }, 400);
         }
       })
       //If the request fails(no response from the server)
@@ -66,7 +72,7 @@ $(document).ready(() => {
         form_message.css("display", "block");
         form_message.html("<p>Server error!</p>");
         form_message.removeClass("success");
-        form_message.addClass("faliure");
+        form_message.addClass("faliure").removeClass("bg-suc");
       });
   });
 });

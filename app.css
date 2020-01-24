@@ -131,3 +131,15 @@ span#terms {
 .enabled {
     background-color: rgb(79, 91, 166);
 }
+
+/* background color to gree */
+
+.bg-suc {
+    background-color: #06c258;
+    transition: all 2s;
+}
+
+.bg-fal{
+    background-color:  #fa7f7f;
+    transition: all 2s;
+}
